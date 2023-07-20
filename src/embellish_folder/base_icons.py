@@ -26,7 +26,7 @@ def superimpose_images(foreground: Image, background: Image):
     image_y = int(
         target_region_top + target_region_padding + (target_region_height - actual_thumbnail_height) / 2
     )
-
+    foreground = foreground.convert("RGBA")
     folder_icon.paste(foreground, (image_x, image_y), foreground)
 
     draw = ImageDraw.Draw(folder_icon)
